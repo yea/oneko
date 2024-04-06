@@ -35,9 +35,6 @@ import javax.swing.WindowConstants;
 public class NekoSettings {
 
 	// Settings keys:
-	private static final String HELLO = "hello";
-	private static final String TITLE = "windowTitle";
-
 	private static final String TRIGGER_DIST = "triggerDistance";
 	private static final String CATCH_DIST = "catchDistance";
 	private static final String RUN_DIST = "runDistancePerFrame";
@@ -76,8 +73,6 @@ public class NekoSettings {
 		load();
 	}
 
-	public String getTitle() { return settings.getString(TITLE);}
-
 	/** Convert frames-per-seconds to milliseconds */
 	private int getDelay(String key)
 	{
@@ -105,8 +100,6 @@ public class NekoSettings {
 	public void load()
 	{
 		settings.load();
-		String hello=settings.getString(HELLO);
-		if ( hello!=null ) System.out.println(hello);
 
 		triggerDist = settings.getInt(TRIGGER_DIST,16);
 		catchDist = settings.getInt(CATCH_DIST,16);
